@@ -1,0 +1,51 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.message-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 16px;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-list-item {
+  margin-bottom: 8px;
+}
+
+.message-paper {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.message-bar .MuiOutlinedInput-root,
+.message-bar .MuiButton-root {
+  height: 56px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.message-list::-webkit-scrollbar {
+  display: none;
+}
+
+.message-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat-header {
+  padding-top: 32px;
+}
