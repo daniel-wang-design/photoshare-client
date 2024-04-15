@@ -13,7 +13,7 @@ const App: React.FC = () => {
     name: "",
   });
   const stompClient: Stomp.Client = Stomp.client(
-    "ws://" + process.env.BASE_URL + "/ws"
+    "wss://" + process.env.BASE_URL + "/ws"
   );
 
   if (!isLoggedIn) {

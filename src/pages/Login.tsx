@@ -45,7 +45,7 @@ const Login: React.FC<{
 
   const defaultTheme = createTheme();
 
-  const url = "http://" + process.env.BASE_URL;
+  const url = "https://" + process.env.BASE_URL;
 
   const handleSubmitSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
