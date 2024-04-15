@@ -193,7 +193,7 @@ const Login: React.FC<{
                   <Link
                     href="#"
                     variant="body2"
-                    onClick={(e: React.FormEvent<HTMLFormElement>) => {
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
                       e.preventDefault();
                       setIsSignUp(false);
                     }}
@@ -276,7 +276,7 @@ const Login: React.FC<{
                 <Link
                   href="#"
                   variant="body2"
-                  onClick={(e: React.FormEvent<HTMLFormElement>) => {
+                  onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
                     e.preventDefault();
                     setIsSignUp(true);
                   }}
