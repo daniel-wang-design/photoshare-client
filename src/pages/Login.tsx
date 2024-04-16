@@ -92,8 +92,18 @@ const Login: React.FC<{
       await axios.post<AuthDetails>(url + "/api/auth/signup", user);
       setError("Sign up successful!");
       setIsSignUp(false);
-    } catch (e) {
-      setError("Failed to sign up...try again");
+    } catch (error) {
+      console.log(error);
+      if (axios.isAxiosError(error)) {
+        if (error.response?.data) {
+          const errorMessage: string = error.response.data;
+          setError(errorMessage || "Failed to sign in. Please try again.");
+        } else {
+          setError("Failed to sign in. Please try again.");
+        }
+      } else {
+        setError("An unexpected error occurred. Please try again later.");
+      }
     }
     setLoading(false);
   };
@@ -193,7 +203,9 @@ const Login: React.FC<{
                   <Link
                     href="#"
                     variant="body2"
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+                    onClick={(
+                      e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+                    ) => {
                       e.preventDefault();
                       setIsSignUp(false);
                     }}
@@ -276,7 +288,9 @@ const Login: React.FC<{
                 <Link
                   href="#"
                   variant="body2"
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+                  onClick={(
+                    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+                  ) => {
                     e.preventDefault();
                     setIsSignUp(true);
                   }}
