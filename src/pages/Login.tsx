@@ -138,7 +138,6 @@ const Login: React.FC<{
                   <TextField
                     autoComplete="given-name"
                     name="name"
-                    required
                     fullWidth
                     label="Name"
                     autoFocus
